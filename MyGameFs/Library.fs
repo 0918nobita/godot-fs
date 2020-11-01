@@ -11,7 +11,7 @@ type ButtonFs() =
         GD.Print("Hello from F#!")
 
     member this._OnButtonPressed() =
-        let label: Label = downcast this.GetNode(new NodePath("/root/Main/Label"))
+        let label = this.GetNode<Label>(new NodePath("/root/Main/Label"))
         label.Text <-
             if count > 0
             then sprintf "PRESSED! (%d)" count
@@ -49,3 +49,17 @@ type IconFs() =
 
         match this.Get("position") :?> Vector2 with
         | Vector2(_, y) -> this.Set("position", Vector2(float32(96.0 + x), y))
+
+type TimerFs() =
+    inherit Timer()
+
+    let mutable flag = true;
+
+    override this._Ready() =
+        let timer = this.GetNode<Timer>(new NodePath("/root/Main/Timer"))
+        timer.Connect("timeout", this, "_OnTimerTimeout") |> ignore
+
+    member this._OnTimerTimeout() =
+        let icon = this.GetNode<Sprite>(new NodePath("/root/Main/Icon"))
+        icon.Material.Set("shader_param/alpha", if flag then 1.0f else 0.4f)
+        flag <- not flag
