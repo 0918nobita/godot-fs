@@ -21,7 +21,7 @@ type ButtonFs() =
 type Direction = ToLeft | ToRight
 
 type IconFs() =
-    inherit Node()
+    inherit Sprite()
 
     let mutable elapsedTime = 0.0
 
