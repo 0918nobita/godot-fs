@@ -57,6 +57,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button.cs" />
     <Compile Include="Icon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

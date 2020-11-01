@@ -7,3 +7,9 @@ type IconFs() =
 
     override this._Ready() =
         GD.Print("Hello from F#!")
+
+type ButtonFs() =
+    inherit Button()
+
+    member this._OnButtonPressed() =
+        GD.Print("Pressed!")
