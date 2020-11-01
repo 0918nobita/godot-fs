@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Icon.cs" type="Script" id=2]
+
+[node name="Label" type="Label"]
+anchor_left = 0.296
+anchor_top = 0.204
+anchor_right = 0.296
+anchor_bottom = 0.204
+margin_right = 81.0
+margin_bottom = 14.0
+text = "Hello, world!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -195.81, 101.985 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
