@@ -9,6 +9,12 @@ type ButtonFs() =
 
     override this._Ready() =
         GD.Print("Hello from F#!")
+        this.GetNode(new NodePath("/root/Main"))
+            .Connect("CustomSignal", this, "_OnSignalReceived")
+        |> ignore
+
+    member this._OnSignalReceived(n: int) =
+        GD.Print(sprintf "Received: %d" n)
 
     member this._OnButtonPressed() =
         let label = this.GetNode<Label>(new NodePath("/root/Main/Label"))

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="Icon.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timer.cs" />
   </ItemGroup>
